@@ -10,6 +10,7 @@
     "lint": "tslint -p . -c tslint.json"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "expo": "^34.0.1",
     "expo-cli": "^3.0.9",
     "install": "^0.13.0",
