@@ -12,9 +12,6 @@
     "resolveJsonModule": true,
     "target": "es6",
     "baseUrl": ".",
-    "paths": {
-      "~/*": ["src/*"]
-    },
     "skipLibCheck": true
   },
   "exclude": ["node_modules"]
