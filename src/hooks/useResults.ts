@@ -1,7 +1,16 @@
 import { useState, useEffect } from 'react';
 import yelp from '../api/yelp';
 
-export default () => {
+export interface Result {
+  id: string;
+  price: string;
+  name: string;
+  image_url: string;
+  review_count: number;
+  rating: number;
+}
+
+export default (): [(searchTerm: string) => void, Result[], string] => {
   const [results, setResults] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
 
