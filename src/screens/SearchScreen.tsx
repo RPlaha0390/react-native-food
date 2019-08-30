@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, ScrollView } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 
 import SearchBar from '../components/SearchBar';
-import useResults from '../hooks/useResults';
+import useResults, { Result } from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
 
 const SearchScreen = () => {
@@ -10,7 +10,7 @@ const SearchScreen = () => {
   const [searchApi, results, errorMessage] = useResults();
 
   const filterResultsByPrice = (price: string) => {
-    return results.filter(result => {
+    return results.filter((result: Result) => {
       return result.price === price;
     });
   };
@@ -20,7 +20,7 @@ const SearchScreen = () => {
       <SearchBar
         term={term}
         onTermChange={setTerm}
-        onTermSubmit={() => searchApi}
+        onTermSubmit={() => searchApi(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
